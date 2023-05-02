@@ -32,9 +32,10 @@ public class LocationService {
 	}
 	
 	public void updateLocation(String id,Location location) {
-		int loc = locations.stream().filter(l -> id.equals(l.getId()))
-				.;
-		locations.set(id, loc);
+		/*
+		 * int loc = locations.stream().filter(l -> id.equals(l.getId()));
+		 * locations.set(id, loc);
+		 */
 	}
 
 }
