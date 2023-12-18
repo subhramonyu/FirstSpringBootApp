@@ -3,6 +3,7 @@ package com.example.FirstSpringBoot.service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import org.springframework.stereotype.Service;
 
@@ -31,11 +32,20 @@ public class LocationService {
 		locations.add(location);
 	}
 	
-	public void updateLocation(String id,Location location) {
-		/*
-		 * int loc = locations.stream().filter(l -> id.equals(l.getId()));
-		 * locations.set(id, loc);
-		 */
+	public void updateLocation(String id, Location location) {
+
+		   for(int i = 0; i < locations.size(); i++) {
+
+			Location l = locations.get(i);
+
+			if (l.getId().equals(id)) {
+			    locations.set(i, location);
+			}
+		   }		
+		}
+	
+	public void deleteLocation(String id) {
+	    locations.removeIf(t -> t.getId().equals(id));
 	}
 
 }

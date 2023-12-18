@@ -33,5 +33,15 @@ public class LocationController {
 	public void addLocation(@RequestBody Location location ) {
 		locationservice.addLocation(location);
 	}
+	
+	@RequestMapping(method = RequestMethod.PUT ,value="/locations/{id}")
+	public void updateLocation(@RequestBody Location location , @PathVariable String id ) {
+		locationservice.updateLocation(id, location);
+	}
+	
+	@RequestMapping(value = "/location/{id}", method = RequestMethod.DELETE)
+	 public void deleteLocation(@PathVariable String id) {
+		locationservice.deleteLocation(id);
+	 }
 
 }
